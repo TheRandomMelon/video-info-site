@@ -1,0 +1,18 @@
+title: TheRandomMelon
+email: michael@therandommelon.com
+description: I make Discord bots and other kinds of software. May or may not be a literal melon.
+baseurl: ""
+url: https://therandommelon.com
+urlnp: therandommelon.com
+twitter: https://twitter.com/michaelwebbtrm
+github: https://github.com/TheRandomMelon/blog
+permalink: /:title
+desc: I make Discord bots and other kinds of software. May or may not be a literal melon.
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-last-modified-at
+exclude:
+  - Gemfile
+  - Gemfile.lock

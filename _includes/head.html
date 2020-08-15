@@ -1,0 +1,44 @@
+<head>
+	<!-- Search Engine Meta -->
+	<meta name="robots" content="index, follow">
+	<meta name="author" content="TheRandomMelon" />
+	<meta name="description" content="{% if page.desc %}{{ page.desc | escape }}{% else %}{{ page.title | escape }}{% endif %}">
+	<meta name="keywords" content="trm, therandommelon, trm youtube, therandommelon blog, therandommelon.com, {{ page.keywords | escape }}">
+	<!-- Open Graph  -->
+	<meta property="og:title" content="{{ page.title | escape }}">
+	<meta property="og:site_name" content="TheRandomMelon">
+	<meta property="og:url" content="https://therandommelon.com">
+	<meta property="og:description" content="{{ page.desc | escape }} ">
+	<meta property="og:type" content="website">
+	{% if page.image %}
+	<meta property="og:image" content="https://therandommelon.com/img/posts/{{ page.image }}">
+	{% else %}
+	<meta property="og:image" content="https://therandommelon.com/img/trm_logo.png">
+	{% endif %}
+	<!-- Twitter -->
+	{% if page.image %}
+	<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@michaelwebbtrm" />
+		<meta name="twitter:title" content="{{ page.title | escape }} - {{ site.title | escape }}" />
+		<meta name="twitter:description" content="{% if page.desc %}{{ page.desc | escape }}{% else %}{{ page.title | escape }}{% endif %}" />
+		<meta name="twitter:image" content="https://therandommelon.com/img/posts/{{ page.image }}" />
+	{% else %}
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@michaelwebbtrm" />
+		<meta name="twitter:title" content="{{ page.title | escape }} - {{ site.title | escape }}" />
+		<meta name="twitter:description" content="{% if page.desc %}{{ page.desc | escape }}{% else %}{{ page.title | escape }}{% endif %}" />
+{% endif %}
+<title>{% if page.title %}{{ page.title }} - {% endif %} TheRandomMelon</title>
+	<meta name=”theme-color” content=”#96B844”>
+  <link href="https://use.fontawesome.com/releases/v5.0.0/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script>
+		 $(function () { $('[data-toggle="tooltip"]').tooltip() })
+	</script>
+</head>	

@@ -1,0 +1,129 @@
+---
+title: Videos
+description: TheRandomMelon's catalog of latest videos.
+keywords: homepage
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Search Engine Meta -->
+	<meta name="robots" content="index, follow">
+	<meta name="author" content="TheRandomMelon" />
+	<meta name="description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ page.title | escape }}{% endif %}">
+	<meta name="keywords" content="trm, therandommelon, trm youtube, therandommelon blog, therandommelon.com, {{ page.keywords | escape }}">
+	<!-- Open Graph  -->
+	<meta property="og:title" content="{{ page.title | escape }}">
+	<meta property="og:site_name" content="Videos - TheRandomMelon">
+	<meta property="og:url" content="https://videos.therandommelon.com">
+	<meta property="og:description" content="{{ page.description | escape }} ">
+	<meta property="og:type" content="website">
+	{% if page.image %}
+	<meta property="og:image" content="https://videos.therandommelon.com/img/posts/{{ page.image }}">
+	{% else %}
+	<meta property="og:image" content="https://videos.therandommelon.com/img/trm_logo.png">
+	{% endif %}
+	<!-- Twitter -->
+	{% if page.image %}
+	<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@michaelwebbtrm" />
+		<meta name="twitter:title" content="{{ page.title | escape }} - {{ site.title | escape }}" />
+		<meta name="twitter:description" content="{% if page.desc %}{{ page.desc | escape }}{% else %}{{ page.title | escape }}{% endif %}" />
+		<meta name="twitter:image" content="https://videos.therandommelon.com/img/posts/{{ page.image }}" />
+	{% else %}
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@michaelwebbtrm" />
+		<meta name="twitter:title" content="{{ page.title | escape }} - {{ site.title | escape }}" />
+		<meta name="twitter:description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ page.title | escape }}{% endif %}" />
+{% endif %}
+<title>{% if page.title %}{{ page.title }} - {% endif %} TheRandomMelon</title>
+<meta name=”theme-color” content=”#96B844”>
+<link href="https://use.fontawesome.com/releases/v5.0.0/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/bootstrap.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script>
+	 $(function () { $('[data-toggle="tooltip"]').tooltip() })
+</script>
+</head>
+<body class="d-flex flex-column homepagerow">
+	<div class="m-4">
+		<div style="text-align: center;">
+			<h1><img src="/img/trm_logo.png" width="50" alt="TRM Logo" class="rounded-circle align-top" /> TheRandomMelon</h1>
+
+			<a href="https://twitter.com/michaelwebbtrm" class="mr-2 text-twitter"><i class="fab fa-twitter"></i> Twitter</a>
+			<a href="https://twitch.tv/michaelwebbtrm" class="mr-2 text-twitch"><i class="fab fa-twitch"></i> Twitch (regular streams)</a>
+			<a href="https://www.youtube.com/TheRandomMelon" class="mr-2 text-youtube"><i class="fab fa-youtube"></i> YouTube</a>
+			<a href="https://github.com/TheRandomMelon" class="mr-2 text-github"><i class="fab fa-github"></i> GitHub</a>
+			<a href="" data-toggle="modal" data-target="#emailModal" class="mr-2 text-blog"><i class="fas fa-envelope"></i> Email</a>
+		</div>
+		<div class="modal fade" id="emailModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title">Email address</h5>
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+				<div class="modal-body">
+					<pre class="text-white">michael [at] therandommelon [dot] com</pre>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-trm" data-dismiss="modal">Close</button>
+				</div>
+			  </div>
+			</div>
+		</div>
+
+		<br>
+		<h2>Newest videos</h2>
+		{% for post in site.posts limit:5 %}
+		<div class="homepage-card">
+			<div class="card mb-3 clearfix text-center">
+			  <div class="card-body" style="
+			  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://i.ytimg.com/vi/{{ post.via-id }}/maxresdefault.jpg');
+			  background-position: center;
+		  ">
+				<div class="">
+				{% if post.badge-text %}
+					<h4 class="card-title"><span class="badge badge-danger">{{ post.badge-text }}</span> {{ post.title }}</h4>
+				{% else %}
+					<h4 class="card-title">{{ post.title }}</h4>
+				{% endif %}
+				
+				{% if post.via %}
+				<p class="card-text">
+					{{ post.desc }}<br>
+					<span class="text-muted">Published on {{ post.date | date: '%B %d, %Y' }} via {{ post.via }}</span>
+				</p>
+				{% else %}
+				<p class="card-text">
+					{{ post.desc }}<br>
+					<span class="text-muted">Published on {{ post.date | date: '%B %d, %Y' }}</span>
+				</p>
+				{% endif %}
+
+				
+				{% if post.via %}
+					<a href="{{ post.via-link }}" class="btn btn-danger">
+						{% if post.via == "YouTube" %}
+						<i class="fab fa-youtube"></i> 
+						{% endif %}
+						
+						Watch the video on {{ post.via }}</a>
+				{% else %}
+					<a href="{{ post.url }}" class="btn btn-success">Watch the video</a>
+				{% endif %}
+				</div>
+			  </div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</body>
+</html>
