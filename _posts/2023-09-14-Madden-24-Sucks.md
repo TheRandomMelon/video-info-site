@@ -1,6 +1,7 @@
 ---
 title: Madden 24 SUCKS! - Gameplay Proving How EXPLOITATIVE Ultimate Team Is (feat. SonicHack)
 layout: post
+badge-text: NEW
 category: Video
 keywords: youtube
 id: "Madden-24-Sucks"
