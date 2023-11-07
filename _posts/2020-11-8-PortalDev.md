@@ -1,7 +1,6 @@
 ---
 title: The Development Story of Portal - A Puzzle Game With A Rich Story
 layout: post
-badge-text: NEW
 category: Video
 keywords: youtube
 id: PortalDev
